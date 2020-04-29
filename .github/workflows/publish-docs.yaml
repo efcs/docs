@@ -14,10 +14,8 @@ jobs:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
     - run: gcloud info
-    - name: Build docs
-      run: |
-        sudo apt-get install python3-sphinx build-essential
-        make html
+    - run: sudo apt-get install -y python3-sphinx build-essential
+    - run: make html
     - name: Upload docs
       run: |
         gsutil cp build/html/* gs://docs.efcs.ca/
