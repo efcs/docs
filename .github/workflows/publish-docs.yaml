@@ -16,7 +16,7 @@ jobs:
     - run: gcloud info
     - name: Build docs
       run: |
-        sudo apt-get install python3-sphinx build-essentials
+        sudo apt-get install python3-sphinx build-essential
         make html
     - name: Upload docs
       run: |
